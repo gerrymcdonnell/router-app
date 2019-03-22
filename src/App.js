@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //import route component
-import { Route,Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import NavBar from "./components/navbar";
 import Products from "./components/products";
@@ -19,15 +19,18 @@ class App extends Component {
         <NavBar />
 
         <div className="content">
-        <Switch>
-          {/**vid 98 how to pass props to route */}
-          <Route 
-            path="/products" 
-            render={(props)=><Products sortBy="newest" {...props}/>}
-          />
-          <Route path="/posts" component={Posts} />
-          <Route path="/admin" component={Dashboard} />
-          <Route path="/"  component={Home} />
+          {/**with the switch route component put the more specfic routes first */}
+          <Switch>
+            {/**paramater passing to route */}
+            <Route path="/products/:id" component={ProductDetails} />
+            {/**vid 98 how to pass props to route */}
+            <Route
+              path="/products"
+              render={(props) => <Products sortBy="newest" {...props} />}
+            />
+            <Route path="/posts/:year:month" component={Posts} />
+            <Route path="/admin" component={Dashboard} />
+            <Route path="/" component={Home} />
           </Switch>
         </div>
 

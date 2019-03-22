@@ -20,7 +20,11 @@ class App extends Component {
 
         <div className="content">
         <Switch>
-          <Route path="/products" component={Products} />
+          {/**vid 98 how to pass props to route */}
+          <Route 
+            path="/products" 
+            render={(props)=><Products sortBy="newest" {...props}/>}
+          />
           <Route path="/posts" component={Posts} />
           <Route path="/admin" component={Dashboard} />
           <Route path="/"  component={Home} />

@@ -1,6 +1,11 @@
 import React from "react";
+import queryString from 'react-scripts';
 
-const Posts = ({match}) => {
+const Posts = ({ match, location }) => {
+
+  const { sortBy } = queryString.parse(location.search);
+  console.log(sortBy);
+
   return (
     <div>
       <h1>Posts</h1>

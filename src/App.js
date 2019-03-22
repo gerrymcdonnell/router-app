@@ -17,12 +17,13 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        
+
         <div className="content">
           <Route path="/products" component={Products} />
           <Route path="/posts" component={Posts} />
           <Route path="/admin" component={Dashboard} />
-          <Route path="/" component={Home} />
+          {/**path must exactly match the forward slash*/}
+          <Route path="/" exact component={Home} />
         </div>
 
       </div>

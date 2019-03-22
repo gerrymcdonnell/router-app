@@ -1,5 +1,5 @@
 import React from "react";
-import queryString from 'react-scripts';
+import queryString from 'query-string';
 
 const Posts = ({ match, location }) => {
 
